@@ -18,9 +18,11 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Routes
 const authRoutes = require('./routes/authRoute');
+const productRoutes = require('./routes/productRoute');
 
 
 app.use('/api/auth', authRoutes);
+app.use('/api/products', productRoutes);
 
 
 // Error handler
