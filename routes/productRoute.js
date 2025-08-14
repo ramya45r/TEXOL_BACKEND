@@ -11,9 +11,7 @@ const storage = multer.diskStorage({
     cb(null, Date.now() + '-' + file.originalname.replace(/\s+/g, '-'))
 });
 const upload = multer({ storage });
-
 // Routes
-
 router.post('/', authenticate, adminOnly, upload.array('images', 5), productController.createProduct);
 router.get('/', productController.getProducts);
 router.get('/:id', productController.getProductById);

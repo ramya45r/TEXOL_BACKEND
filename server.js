@@ -19,11 +19,13 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // Routes
 const authRoutes = require('./routes/authRoute');
 const productRoutes = require('./routes/productRoute');
-
+const orderRoutes = require('./routes/orderRoutes');
+const categoryRoutes = require('./routes/categoryRoutes');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
-
+app.use('/api/orders', orderRoutes);
+app.use('/api/categories', categoryRoutes);
 
 // Error handler
 app.use((err, req, res, next) => {
